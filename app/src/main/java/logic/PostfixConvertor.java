@@ -31,7 +31,6 @@ public class PostfixConvertor {
     Stack<Character> ops = new Stack<Character>();
     for (int i = 0; i < infix.length(); i++) {
       char c = infix.charAt(i);
-
       if ((c >= '0' && c <= '9') || c == '.') {
         postfix += c;
       } else {

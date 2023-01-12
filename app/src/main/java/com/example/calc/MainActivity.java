@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
 import logic.*;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,15 +43,11 @@ public class MainActivity extends AppCompatActivity {
     TextView display = (TextView) findViewById(R.id.textView);
     String infix = display.getText().toString();
     try {
-
       String postfix = PostfixConvertor.toPostFix(infix);
-
       double ans = PostfixEvaluation.evaluate(postfix);
-
       display.setText(infix + " = " + ans);
-    }
-    catch (Exception e) {
-      display.setText("Invalid Expression : "+infix);
+    } catch (Exception e) {
+      display.setText("Invalid Expression : " + infix);
     }
     expression = "";
   }
